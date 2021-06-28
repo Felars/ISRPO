@@ -3,10 +3,35 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:ISRPO"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Касса" Height="442.516" Width="1259.988" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Loaded="Window_Loaded">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <DataGrid x:Name="dgogrenci3" HorizontalAlignment="Left" AutoGenerateColumns="False" Height="323" Margin="100,10,0,0" VerticalAlignment="Top" Width="744" RenderTransformOrigin="0.592,0.574">
+
+
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Namee}" Header="Наименование" Width="*"/>
+                <DataGridTextColumn Binding="{Binding Price}" Header="Цена" Width="*"/>
+                <DataGridTextColumn Binding="{Binding Quantity}" Header="Кол-во" Width="*"/>
+                <DataGridTextColumn Binding="{Binding Sum}" Header="Сумма" Width="*"/>
+
+            </DataGrid.Columns>
+
+        </DataGrid>
+
+
+        <Button x:Name="ADD" Grid.Column="0" Content="Добавить" Click="ADD1" Margin="954,322,132,44" Height="Auto" Background="#FF23A1BD" BorderBrush="#FF531293" Width="Auto"/>
+
+        <TextBox x:Name="Namee" materialDesign:HintAssist.Hint="Наименование" HorizontalAlignment="Left" Height="36" Margin="923,87,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="247" RenderTransformOrigin="0.708,-0.781"/>
+
+        <TextBox x:Name="Price" materialDesign:HintAssist.Hint="Цена" HorizontalAlignment="Left" Height="36" Margin="923,126,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="247" RenderTransformOrigin="0.708,-0.781"/>
+        <TextBox x:Name="Quantity" materialDesign:HintAssist.Hint="Кол-во" HorizontalAlignment="Left" Height="36" Margin="923,169,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="247" RenderTransformOrigin="0.708,-0.781"/>
+        <TextBox x:Name="Sum" materialDesign:HintAssist.Hint="Сумма" HorizontalAlignment="Left" Height="36" Margin="923,210,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="247" RenderTransformOrigin="0.708,-0.781"/>
     </Grid>
 </Window>
